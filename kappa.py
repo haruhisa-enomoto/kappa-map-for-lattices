@@ -1,0 +1,152 @@
+r"""
+This module adds methods to
+:class:`sage.combinat.posets.lattices.FiniteLatticePoset`
+which compute the (extended) kappa (dual) map.
+"""
+
+from sage.combinat.posets.lattices import FiniteLatticePoset
+
+def kappa(self, j, check = True):
+    r"""
+    Return `\kappa(j)` for a join-irreducible element `j`
+    in a finite lattice ``self`` if it exists.
+
+    INPUT:
+
+    - ``j`` -- an element of ``self``,
+      which is expected to be join-irreducible
+
+    - ``check`` -- a Boolean (default: ``False``),
+      whether to check that ``j`` is indeed join-irreducible
+
+    OUTPUT:
+
+    an element of ``self``, or None if it does not exist.
+
+    .. SEEALSO::
+      :meth:`sage.combinat.posets.hasse_diagram.HasseDiagram.kappa`
+
+    REFERENCE:
+
+    .. []
+
+    """
+
+    if check and j not in self.join_irreducibles():
+        raise ValueError(f"{j} is not join-irreducible.")
+
+    hasse = self._hasse_diagram
+    j_vtx = self._element_to_vertex(j)
+    m_vtx = hasse.kappa(j_vtx)
+    if m_vtx is None:
+        return None
+    m = self._vertex_to_element(m_vtx)
+    return m
+
+def extended_kappa(self,x):
+    r"""
+    Return `\overline{\kappa(x)}` for an element `x`
+    in a finite lattice ``self`` if it exists.
+    This first compute the canonical joinands of `x`,
+    and then compute meet of kappa of them.
+    This returns None if `x` admits no canonical join reprensetation
+    or kappa of some canonical joinand does not exist.
+
+    INPUT:
+
+    - ``x`` -- an element of ``self``
+
+    OUTPUT:
+
+    an element of ``self``, or None if it does not exist.
+
+    .. SEEALSO::
+      :func:`kappa`
+
+    REFERENCE:
+
+    .. [BCZ] Emily Barnard, Gordana Todorov, Shijie Zhu,
+      Dynamical Combinatorics and Torsion Classes,
+      arXiv:1911.10712.
+
+    """
+    CJR = self.canonical_joinands(x)
+    if CJR is None:
+        return None
+    kappa_CJR = [self.kappa(j, check = False) for j in CJR]
+    try:
+        return self.meet(kappa_CJR)
+    except:
+        return None
+
+def kappa_dual(self, m, check = True):
+    r"""
+    Return `\kappa^d(m)` for a meet-irreducible element `m`
+    in a finite lattice ``self`` if it exists.
+
+    INPUT:
+
+    - ``m`` -- an element of ``self``,
+      which is expected to be meet-irreducible
+
+    - ``check`` -- a Boolean (default: ``False``),
+      whether to check that ``m`` is indeed join-irreducible
+
+    OUTPUT:
+
+    an element of ``self``, or None if it does not exist.
+
+    .. SEEALSO::
+      :meth:`sage.combinat.posets.hasse_diagram.HasseDiagram.kappa_dual`
+    """
+
+    if check and m not in self.meet_irreducibles():
+        raise ValueError(f"{m} is not join-irreducible.")
+
+    hasse = self._hasse_diagram
+    m_vtx = self._element_to_vertex(m)
+    j_vtx = hasse.kappa_dual(m_vtx)
+    if j_vtx is None:
+        return None
+    j = self._vertex_to_element(j_vtx)
+    return j
+
+def extended_kappa_dual(self,x):
+    r"""
+    Return `\overline{\kappa^d(x)}` for an element `x`
+    in a finite lattice ``self`` if it exists.
+    This first compute the canonical meetands of `x`,
+    and then compute meet of kappa_dual of them.
+    This returns None if `x` admits no canonical meet reprensetation
+    or kappa_dual of some canonical meetand does not exist.
+
+    INPUT:
+
+    - ``x`` -- an element of ``self``
+
+    OUTPUT:
+
+    an element of ``self``, or None if it does not exist.
+
+    .. SEEALSO::
+      :func:`kappa_dual`
+
+    REFERENCE:
+
+    .. [BCZ] Emily Barnard, Gordana Todorov, Shijie Zhu,
+      Dynamical Combinatorics and Torsion Classes,
+      arXiv:1911.10712.
+    """
+    CMR = self.canonical_meetands(x)
+    if CMR is None:
+        return None
+    kappa_d_CMR = [self.kappa_dual(j) for j in CMR]
+    try:
+        return self.join(kappa_d_CMR)
+    except:
+        return None
+
+FiniteLatticePoset.kappa = kappa
+FiniteLatticePoset.extended_kappa = extended_kappa
+FiniteLatticePoset.kappa_dual = kappa_dual
+FiniteLatticePoset.extended_kappa_dual = extended_kappa_dual
