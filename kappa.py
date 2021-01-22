@@ -61,7 +61,7 @@ def extended_kappa(self, x):
     REFERENCE:
 
     .. [BCZ] E. Barnard, G. Todorov, S. Zhu,
-      Dynamical Combinatorics and Torsion Classes,
+      Dynamical combinatorics and torsion classes,
       J. Pure Appl. Algebra 225 (2021), no. 9, 106642.
 
     """
@@ -129,7 +129,7 @@ def extended_kappa_dual(self, x):
     REFERENCE:
 
     .. [BCZ] Emily Barnard, Gordana Todorov, Shijie Zhu,
-      Dynamical Combinatorics and Torsion Classes,
+      Dynamical combinatorics and torsion Classes,
       arXiv:1911.10712.
     """
     CMR = self.canonical_meetands(x)

@@ -17,7 +17,7 @@ See [manual](Manual.ipynb).
 ## References
 
 - [BCZ] E. Barnard, G. Todorov, S. Zhu,
-  Dynamical Combinatorics and Torsion Classes,
+  Dynamical combinatorics and torsion classes,
   J. Pure Appl. Algebra 225 (2021), no. 9, 106642.
 - [RST] N. Reading, D. E. Speyer, H. Thomas,
   The fundamental theorem of finite semidistributive lattices,
