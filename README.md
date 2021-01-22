@@ -12,7 +12,10 @@ The extended kappa map was introduced in [BCZ], which extends the kappa map by u
 These maps naturally arise in the representation theory of algebra.
 
 ## Definitions and Usage
-See [manual](Manual.ipynb). If you are studying representation theory of algebras, we recommend to read [note for rep-theorists](for-rep-theory.ipynb) for motivation.
+
+- See [manual](Manual.ipynb).
+
+- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](for-rep-theory.ipynb) for motivation.
 
 ## References
 
