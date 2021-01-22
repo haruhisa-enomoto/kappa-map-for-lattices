@@ -16,20 +16,15 @@ def kappa(self, j, check = True):
     - ``j`` -- an element of ``self``,
       which is expected to be join-irreducible
 
-    - ``check`` -- a Boolean (default: ``False``),
+    - ``check`` -- a Boolean (default: ``True``),
       whether to check that ``j`` is indeed join-irreducible
 
     OUTPUT:
 
-    an element of ``self``, or None if it does not exist.
+    an element of ``self``, or ``None`` if it does not exist.
 
     .. SEEALSO::
       :meth:`sage.combinat.posets.hasse_diagram.HasseDiagram.kappa`
-
-    REFERENCE:
-
-    .. []
-
     """
 
     if check and j not in self.join_irreducibles():
@@ -43,13 +38,13 @@ def kappa(self, j, check = True):
     m = self._vertex_to_element(m_vtx)
     return m
 
-def extended_kappa(self,x):
+def extended_kappa(self, x):
     r"""
     Return `\overline{\kappa(x)}` for an element `x`
     in a finite lattice ``self`` if it exists.
-    This first compute the canonical joinands of `x`,
-    and then compute meet of kappa of them.
-    This returns None if `x` admits no canonical join reprensetation
+    This first computes the canonical joinands of `x`,
+    and then computes the meet of kappa of them.
+    This returns ``None`` if ``x`` admits no canonical join reprensetation
     or kappa of some canonical joinand does not exist.
 
     INPUT:
@@ -58,16 +53,16 @@ def extended_kappa(self,x):
 
     OUTPUT:
 
-    an element of ``self``, or None if it does not exist.
+    an element of ``self``, or ``None`` if it does not exist.
 
     .. SEEALSO::
       :func:`kappa`
 
     REFERENCE:
 
-    .. [BCZ] Emily Barnard, Gordana Todorov, Shijie Zhu,
+    .. [BCZ] E. Barnard, G. Todorov, S. Zhu,
       Dynamical Combinatorics and Torsion Classes,
-      arXiv:1911.10712.
+      J. Pure Appl. Algebra 225 (2021), no. 9, 106642.
 
     """
     CJR = self.canonical_joinands(x)
@@ -89,12 +84,12 @@ def kappa_dual(self, m, check = True):
     - ``m`` -- an element of ``self``,
       which is expected to be meet-irreducible
 
-    - ``check`` -- a Boolean (default: ``False``),
+    - ``check`` -- a Boolean (default: ``True``),
       whether to check that ``m`` is indeed join-irreducible
 
     OUTPUT:
 
-    an element of ``self``, or None if it does not exist.
+    an element of ``self``, or ``None`` if it does not exist.
 
     .. SEEALSO::
       :meth:`sage.combinat.posets.hasse_diagram.HasseDiagram.kappa_dual`
@@ -111,13 +106,13 @@ def kappa_dual(self, m, check = True):
     j = self._vertex_to_element(j_vtx)
     return j
 
-def extended_kappa_dual(self,x):
+def extended_kappa_dual(self, x):
     r"""
     Return `\overline{\kappa^d(x)}` for an element `x`
     in a finite lattice ``self`` if it exists.
-    This first compute the canonical meetands of `x`,
-    and then compute meet of kappa_dual of them.
-    This returns None if `x` admits no canonical meet reprensetation
+    This first computes the canonical meetands of `x`,
+    and then computes the join of kappa_dual of them.
+    This returns ``None`` if `x` admits no canonical meet reprensetation
     or kappa_dual of some canonical meetand does not exist.
 
     INPUT:
@@ -126,7 +121,7 @@ def extended_kappa_dual(self,x):
 
     OUTPUT:
 
-    an element of ``self``, or None if it does not exist.
+    an element of ``self``, or ``None`` if it does not exist.
 
     .. SEEALSO::
       :func:`kappa_dual`
@@ -140,7 +135,7 @@ def extended_kappa_dual(self,x):
     CMR = self.canonical_meetands(x)
     if CMR is None:
         return None
-    kappa_d_CMR = [self.kappa_dual(j) for j in CMR]
+    kappa_d_CMR = [self.kappa_dual(m, check = False) for m in CMR]
     try:
         return self.join(kappa_d_CMR)
     except:
