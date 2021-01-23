@@ -6,13 +6,13 @@ which compute the (extended) kappa (dual) map.
 
 from sage.combinat.posets.lattices import FiniteLatticePoset
 
-# Algorhithm:
+# Algorithm:
 # There is actually a method which computes kappa,
 # :meth:`sage.combinat.posets.hasse_diagram.HasseDiagram.kappa`.
-# The problem is there is no method for posets or lattice,
+# The problem is there is no method for lattice,
 # but only for Hasse diagrams.
-# Thus, for a given lattice `L`, we get its Hasse diagram
-# L._hasse_diagram, and just apply the existing method.
+# Thus, for a given lattice ``L``, we get its Hasse diagram
+# ``L._hasse_diagram``, and just apply the existing method.
 
 
 def kappa(self, j, check = True):
