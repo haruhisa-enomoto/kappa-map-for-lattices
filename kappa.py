@@ -1,5 +1,5 @@
 r"""
-This module adds methods to
+This code adds methods to
 :class:`sage.combinat.posets.lattices.FiniteLatticePoset`
 which compute the (extended) kappa (dual) map.
 """
