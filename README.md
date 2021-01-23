@@ -11,9 +11,9 @@ These maps naturally arise in the representation theory of algebra.
 
 ## Definitions and Usage
 
-- See [manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb).
+- See [manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb?flush_cache=true).
 
-- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb) for motivation.
+- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb?flush_cache=true) for motivation.
 
 ## References
 
