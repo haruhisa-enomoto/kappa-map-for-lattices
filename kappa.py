@@ -37,7 +37,7 @@ def kappa(self, j, check = True):
     """
 
     if check and j not in self.join_irreducibles():
-        raise ValueError(f"{j} is not join-irreducible.")
+        raise ValueError("{0} is not join-irreducible.".format(j))
 
     hasse = self._hasse_diagram
     j_vtx = self._element_to_vertex(j)
@@ -105,7 +105,7 @@ def kappa_dual(self, m, check = True):
     """
 
     if check and m not in self.meet_irreducibles():
-        raise ValueError(f"{m} is not join-irreducible.")
+        raise ValueError("{0} is not join-irreducible.".format(m))
 
     hasse = self._hasse_diagram
     m_vtx = self._element_to_vertex(m)
