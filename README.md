@@ -1,4 +1,4 @@
-# Kappa map for lattices in sage
+# Kappa map for lattices in SageMath
 This module [kappa.py](kappa.py) is for [SageMath](https://www.sagemath.org/).
 This adds methods to
 a Sage class [`FiniteLatticePoset`](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/posets/lattices.html#sage.combinat.posets.lattices.FiniteLatticePoset)
