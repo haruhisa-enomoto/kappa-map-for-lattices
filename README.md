@@ -1,8 +1,8 @@
 # Kappa map for lattices in SageMath
-This module [kappa.py](kappa.py) is for [SageMath](https://www.sagemath.org/).
+A module [kappa.py](kappa.py) in this repository is for [SageMath](https://www.sagemath.org/).
 This adds methods to
 a Sage class [`FiniteLatticePoset`](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/posets/lattices.html#sage.combinat.posets.lattices.FiniteLatticePoset)
-which compute the (extended) kappa (dual) map.
+which compute the (extended) kappa (dual) map for finite lattices.
 
 For a finite semidistributive lattice, the kappa map is a bijective map from the set of join-irreducible elements to the set of meet-irreducible elements, and the inverse map is the kappa dual map. See [BCZ] and [RST] for the detail.
 The extended kappa map was introduced in [BCZ], which extends the kappa map by using canonical join representations of elements.
@@ -14,10 +14,10 @@ These maps naturally arise in the representation theory of algebra.
 
 ## Definitions and Usage
 
-- See [manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb).
+- [Manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb).
 
-- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb) for motivation.
- This explains how kappa maps appear in the representation theory, and demonstrate how to use `kappa.py` to study torsion classes and bricks.
+- [Notes for representation theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb?flush_cache=true):
+I **strongly recommend you to read this** if you are working with representation theory of algebras, not just a lattice theory: this explains how the kappa map arises in the rep-theory, and demonstrates how to use `kappa.py` to study bricks and torsion classes.
 
 ## References
 
