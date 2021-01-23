@@ -1,5 +1,5 @@
 # Kappa map for lattices in SageMath
-[kappa.py](kappa.py) in this repository is for [SageMath](https://www.sagemath.org/).
+[`kappa.py`](kappa.py) in this repository is for [SageMath](https://www.sagemath.org/).
 This adds methods to
 a Sage class [`FiniteLatticePoset`](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/posets/lattices.html#sage.combinat.posets.lattices.FiniteLatticePoset)
 which compute the (extended) kappa (dual) map for finite lattices.
@@ -13,10 +13,11 @@ These maps naturally arise in the representation theory of algebra.
 [Haruhisa Enomoto](http://haruhisa-enomoto.github.io/)
 
 ## Definitions and Usage
+Here are two Jupyter Notebooks explaining how to use `kappa.py`.
 
 - [Manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb).
 
-- [Notes for representation theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb?flush_cache=true):
+- [Notes for representation theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb):
 I **strongly recommend you to read this** if you are working with representation theory of algebras, not just a lattice theory: this explains how the kappa map arises in the rep-theory, and demonstrates how to use `kappa.py` to study bricks and torsion classes.
 
 ## References
