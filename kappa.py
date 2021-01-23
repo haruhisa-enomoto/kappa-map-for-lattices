@@ -6,6 +6,15 @@ which compute the (extended) kappa (dual) map.
 
 from sage.combinat.posets.lattices import FiniteLatticePoset
 
+# Algorhithm:
+# There is actually a method which computes kappa,
+# :meth:`sage.combinat.posets.hasse_diagram.HasseDiagram.kappa`.
+# The problem is there is no method for posets or lattice,
+# but only for Hasse diagrams.
+# Thus, for a given lattice `L`, we get its Hasse diagram
+# L._hasse_diagram, and just apply the existing method.
+
+
 def kappa(self, j, check = True):
     r"""
     Return `\kappa(j)` for a join-irreducible element `j`
@@ -130,7 +139,7 @@ def extended_kappa_dual(self, x):
 
     .. [BCZ] Emily Barnard, Gordana Todorov, Shijie Zhu,
       Dynamical combinatorics and torsion Classes,
-      arXiv:1911.10712.
+      J. Pure Appl. Algebra 225 (2021), no. 9, 106642.
     """
     CMR = self.canonical_meetands(x)
     if CMR is None:
@@ -140,6 +149,8 @@ def extended_kappa_dual(self, x):
         return self.join(kappa_d_CMR)
     except:
         return None
+
+# We add these functions as methods below.
 
 FiniteLatticePoset.kappa = kappa
 FiniteLatticePoset.extended_kappa = extended_kappa
