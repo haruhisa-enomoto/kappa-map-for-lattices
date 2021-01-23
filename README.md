@@ -13,7 +13,7 @@ These maps naturally arise in the representation theory of algebra.
 
 - See [manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb).
 
-- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theory.ipynb) for motivation.
+- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb) for motivation.
 
 ## References
 
