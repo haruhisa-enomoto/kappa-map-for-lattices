@@ -9,11 +9,15 @@ The extended kappa map was introduced in [BCZ], which extends the kappa map by u
 
 These maps naturally arise in the representation theory of algebra.
 
+## Author
+[Haruhisa Enomoto](http://haruhisa-enomoto.github.io/)
+
 ## Definitions and Usage
 
-- See [manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb?flush_cache=true).
+- See [manual](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/Manual.ipynb).
 
-- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb?flush_cache=true) for motivation.
+- If you are studying representation theory of algebras, we **recommend** to read [note for rep-theorists](https://nbviewer.jupyter.org/github/haruhisa-enomoto/kappa-map-for-lattices/blob/main/for-rep-theorists.ipynb) for motivation.
+ This explains how kappa maps appear in the representation theory, and demonstrate how to use `kappa.py` to study torsion classes and bricks.
 
 ## References
 
