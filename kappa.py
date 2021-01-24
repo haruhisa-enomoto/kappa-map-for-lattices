@@ -150,9 +150,11 @@ def extended_kappa_dual(self, x):
     except:
         return None
 
-# We add these functions as methods below.
-
-FiniteLatticePoset.kappa = kappa
-FiniteLatticePoset.extended_kappa = extended_kappa
-FiniteLatticePoset.kappa_dual = kappa_dual
-FiniteLatticePoset.extended_kappa_dual = extended_kappa_dual
+def add_kappa():
+    r"""
+    This function adds these functions as methods of a Sage class ``FiniteLatticePoset``.
+    """
+    FiniteLatticePoset.kappa = kappa
+    FiniteLatticePoset.extended_kappa = extended_kappa
+    FiniteLatticePoset.kappa_dual = kappa_dual
+    FiniteLatticePoset.extended_kappa_dual = extended_kappa_dual
